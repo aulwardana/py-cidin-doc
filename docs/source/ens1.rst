@@ -8,6 +8,7 @@ network). The meta-learner is trained on a small "sample" dataset from each
 network’s corresponding domain.
 
 The same stacking architecture is applied separately to:
+
 - NF-UNSW-NB15
 - NF-ToN-IoT
 - NF-BoT-IoT
@@ -177,6 +178,7 @@ Explanation
 **2. Per-Dataset Training**
 
 Each dataset contributes:
+
 - A *sample set* → for training the ensemble meta-learner.
 - A *test set* → to evaluate cross-domain performance.
 - A *validation set* (not used here but available).
@@ -189,6 +191,7 @@ Normalizes numeric features into a Gaussian distribution.
 **4. Results**
 
 The script prints:
+
 - Loss
 - Accuracy
 - Recall

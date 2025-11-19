@@ -15,6 +15,7 @@ This creates **five integrated networks**, each testing how well the knowledge
 from other domains improves detection on the remaining domain.
 
 The process:
+
 - Load pre-trained N1–N5 networks.
 - Remove one model depending on the target dataset.
 - Freeze the remaining four models.
