@@ -1,4 +1,4 @@
-API
+Ensemble Stacking Process
 ===
 
 .. autosummary::

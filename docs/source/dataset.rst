@@ -1,4 +1,4 @@
-Usage
+Dataset Processing
 =====
 
 .. _installation:
