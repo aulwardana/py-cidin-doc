@@ -1,4 +1,4 @@
-Py-CIDIN (/Python-based Collaborative Intrusion Detection Simulation in Integrated Networks/)
+Py-CIDIN (Python-based Collaborative Intrusion Detection Simulation in Integrated Networks)
 ===================================
 
 **Py-CIDIN** is a Python-based simulator implementing the Stacked Network Integration Collaborative Intrusion Detection System (SNI-CIDS) framework with Modified Ensemble Stacking Deep Neural Networks (MES-DNN) for adaptive intrusion detection in heterogeneous environments. It supports experimentation on collaborative learning across multiple networks and enabling evaluation of model integration and new network onboarding scenarios.
@@ -10,7 +10,7 @@ If you use this software, please provide citation credit to our **publication** 
 
 .. note::
 
-   This project is part of research that publish at `this link. <https://doi.org/10.1016/j.future.2025.108252>`_
+   This project is part of *"SNI-CIDS: Collaborative intrusion detection using modified ensemble stacking deep neural networks for new network integration in heterogeneous networks"* research that publish at `this link. <https://doi.org/10.1016/j.future.2025.108252>`_
 
 Contents
 --------

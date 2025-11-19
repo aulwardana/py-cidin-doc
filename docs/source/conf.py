@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'Py-CIDIN'
-copyright = '2025, Aulia Arif Wardana'
+copyright = '2025, Aulia Arif Wardana, MIT Licenseß'
 author = 'Aulia Arif Wardana'
 
 release = '0.1'
