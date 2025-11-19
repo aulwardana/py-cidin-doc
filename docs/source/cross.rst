@@ -1,5 +1,5 @@
 Cross-esting Sample
-====
+=====
 
 This document describes the Deep Neural Network (DNN) training and 
 cross-testing process for all NF datasets, including:
@@ -42,8 +42,6 @@ The workflow consists of:
     load_X_df_test = df_test.drop(["Label"],axis=1)
     Y_df_test = df_test["Label"]
 
-Explanation
-===========
 
 * ``pd.read_parquet`` loads the NF datasets.  
 * The ``Label`` column is separated from feature columns.  
@@ -63,8 +61,6 @@ Scaling
     X_df_valid = scaler_df.fit_transform(load_X_df_valid)
     X_df_test = scaler_df.fit_transform(load_X_df_test)
 
-Explanation
-===========
 
 * ``QuantileTransformer`` converts the distribution of each feature to Gaussian.
 * It is robust for data with heavy-tailed values (common in network traffic).
@@ -108,8 +104,6 @@ Explanation
 
         return model
 
-Explanation
-===========
 
 * ``Sequential`` builds a feed-forward neural network.
 * Layer sizes progressively shrink (9 → 7 → 5 → 3 → 1).
@@ -129,8 +123,6 @@ Explanation
     model.save(filename)
     print('>Saved %s' % filename)
 
-Explanation
-===========
 
 * The trained DNN is saved in native Keras format.
 * Naming scheme follows network index (N1–N5).
@@ -159,8 +151,6 @@ Explanation
 
     print('Test F1-score:', f1_score)
 
-Explanation
-===========
 
 * ``evaluate`` returns loss, accuracy, recall, precision.
 * F1 is computed manually using:
@@ -180,7 +170,6 @@ Five models (N1–N5) are tested across five datasets:
 * UQ-NIDS  
 
 Dataset Loading
-===============
 
 .. code-block:: python
 
@@ -194,7 +183,6 @@ Dataset Loading
 * ``loaded_model_Nx`` refers to the trained DNN for network ``Nx``.
 
 Example: Evaluating Model N1 on Dataset N1
-==========================================
 
 .. code-block:: python
 
@@ -247,8 +235,6 @@ Metrics for accuracy, recall, precision, and F1-score are aggregated:
     plot_bar_with_values(precision_N1,labels, 'N1 Precision on Test Sets (N1–N5)', 'salmon')
     plot_bar_with_values(f1_score_N1, labels, 'N1 F1-score on Test Sets (N1–N5)', 'plum')
 
-Explanation
-===========
 
 Each metric is visualized with:
 
