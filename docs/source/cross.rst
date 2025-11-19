@@ -20,7 +20,7 @@ The workflow consists of:
 6. Cross-testing across five different datasets  
 7. Plotting metrics for accuracy, recall, precision, and F1-score
 
----------------------------------------
+
 1. Dataset Loading and Preprocessing
 ---------------------------------------
 
@@ -66,7 +66,7 @@ Scaling
 * It is robust for data with heavy-tailed values (common in network traffic).
 * A new scaler is fit for each split.
 
--------------------------------
+
 2. Building the DNN Model
 -------------------------------
 
@@ -111,7 +111,7 @@ Scaling
 * Training runs for **10 epochs** with **batch size = 1000**.
 * Validation data monitors overfitting.
 
--------------------------------
+
 3. Training and Saving the Model
 -------------------------------
 
@@ -127,7 +127,7 @@ Scaling
 * The trained DNN is saved in native Keras format.
 * Naming scheme follows network index (N1–N5).
 
--------------------------------
+
 4. Model Evaluation
 -------------------------------
 
@@ -157,7 +157,7 @@ Scaling
 
   ``F1 = 2 * (Precision * Recall) / (Precision + Recall)``
 
----------------------------------------
+
 5. Cross-Testing Across NF Datasets
 ---------------------------------------
 
@@ -170,6 +170,7 @@ Five models (N1–N5) are tested across five datasets:
 * UQ-NIDS  
 
 Dataset Loading
+---------------
 
 .. code-block:: python
 
@@ -207,7 +208,7 @@ The same evaluation is repeated for:
 * N4 tested on N1–N5  
 * N5 tested on N1–N5  
 
--------------------------------
+
 6. Metric Collection
 -------------------------------
 
@@ -224,7 +225,7 @@ Metrics for accuracy, recall, precision, and F1-score are aggregated:
         for i in range(5)
     ]
 
----------------------------------------
+
 7. Metric Visualization
 ---------------------------------------
 
@@ -243,7 +244,7 @@ Each metric is visualized with:
 * Values are annotated above each bar  
 * Useful for comparing how well a model generalizes across networks
 
----------------------------------------
+
 Summary
 ---------------------------------------
 
