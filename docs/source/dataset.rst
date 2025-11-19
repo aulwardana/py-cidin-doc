@@ -11,7 +11,6 @@ This document explains, line by line, the entire data preparation workflow for a
 
 Only the input file changes.
 
----
 
 1. Import Required Libraries
 ----------------------------
@@ -26,7 +25,6 @@ Only the input file changes.
 - ``numpy`` provides numerical utilities.
 - ``train_test_split`` is used to create dataset splits.
 
----
 
 2. Load the Parquet Dataset
 ---------------------------
@@ -45,7 +43,6 @@ Only the input file changes.
 
 Replace the filename with the correct dataset for other NF variants.
 
----
 
 3. Check Label Distribution
 ---------------------------
@@ -57,7 +54,6 @@ Replace the filename with the correct dataset for other NF variants.
 - Shows how many benign and attack samples exist.
 - Confirms dataset balance and that the label column is intact.
 
----
 
 4. Drop Identifier Columns
 --------------------------
@@ -69,7 +65,6 @@ Replace the filename with the correct dataset for other NF variants.
 - Removes non-feature or metadata columns that are not used in modeling.
 - These typically include index values, timestamps, or flow identifiers.
 
----
 
 5. Verify Label Counts Again
 ----------------------------
@@ -80,7 +75,6 @@ Replace the filename with the correct dataset for other NF variants.
 
 - Ensures labels were not altered by the column removal process.
 
----
 
 6. Split Into Training and Testing Sets
 ---------------------------------------
@@ -96,7 +90,6 @@ Replace the filename with the correct dataset for other NF variants.
 
 This structure is used for all NF datasets.
 
----
 
 7. Check Training Label Distribution
 ------------------------------------
@@ -107,7 +100,6 @@ This structure is used for all NF datasets.
 
 - Confirms class balance in the training subset.
 
----
 
 8. Check Test Label Distribution
 --------------------------------
@@ -118,7 +110,6 @@ This structure is used for all NF datasets.
 
 - Ensures test set is representative.
 
----
 
 9. Create a 10% Sample Subset
 -----------------------------
@@ -127,9 +118,8 @@ This structure is used for all NF datasets.
 
    train, sample = train_test_split(train, test_size=0.1, random_state=100)
 
-- Generates a smaller dataset useful for fast prototyping or resource-limited experiments.
+- Generates a smaller dataset useful for train meta model.
 
----
 
 10. Check Remaining Training Labels
 -----------------------------------
@@ -140,7 +130,6 @@ This structure is used for all NF datasets.
 
 - Confirms class balance in the reduced training set.
 
----
 
 11. Check Sample Set Labels
 ---------------------------
@@ -151,7 +140,6 @@ This structure is used for all NF datasets.
 
 - Ensures the 10% sample maintains representative class distribution.
 
----
 
 12. Save the Training Set
 -------------------------
@@ -162,7 +150,8 @@ This structure is used for all NF datasets.
 
 - Saves processed training data to a new Parquet file.
 
----
+Replace the filename with the correct dataset for other NF variants.
+
 
 13. Save the Sample Set
 -----------------------
@@ -173,7 +162,8 @@ This structure is used for all NF datasets.
 
 - Stores the small sample subset for quick experiments.
 
----
+Replace the filename with the correct dataset for other NF variants.
+
 
 14. Split Test Set Into Test and Validation
 -------------------------------------------
@@ -187,7 +177,6 @@ This structure is used for all NF datasets.
   - Validation set (10% of original test)
 - Validation is used for tuning and model selection.
 
----
 
 15. Check Final Test Distribution
 ---------------------------------
@@ -196,7 +185,6 @@ This structure is used for all NF datasets.
 
    test['Label'].value_counts()
 
----
 
 16. Check Validation Distribution
 ---------------------------------
@@ -205,7 +193,6 @@ This structure is used for all NF datasets.
 
    valid['Label'].value_counts()
 
----
 
 17. Save Final Test Set
 -----------------------
@@ -214,7 +201,8 @@ This structure is used for all NF datasets.
 
    test.to_parquet("./NF-UNSW-NB15-V2_test.parquet")
 
----
+Replace the filename with the correct dataset for other NF variants.
+
 
 18. Save Validation Set
 -----------------------
@@ -223,18 +211,8 @@ This structure is used for all NF datasets.
 
    valid.to_parquet("./NF-UNSW-NB15-V2_valid.parquet")
 
----
+Replace the filename with the correct dataset for other NF variants.
 
-19. Empty Cell
---------------
-
-.. code-block:: python
-
-   # (empty)
-
-- No operations performed.
-
----
 
 Summary
 -------
