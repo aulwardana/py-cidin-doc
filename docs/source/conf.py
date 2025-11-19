@@ -6,8 +6,8 @@ project = 'Py-CIDIN'
 copyright = '2025, Aulia Arif Wardana, MIT Licenseß'
 author = 'Aulia Arif Wardana'
 
-release = '0.1'
-version = '0.1.0'
+release = '1.0'
+version = '1.0.0'
 
 # -- General configuration
 
